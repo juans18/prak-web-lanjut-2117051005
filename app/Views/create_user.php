@@ -3,7 +3,7 @@
     <div class="container">
         <div class="form-box">
             <div class="form">
-                <form action="<?= base_url('/user/store');?>" method="POST">
+                <form action="<?= base_url('/user/store');?>" method="POST"  enctype="multipart/form-data">
                     <div class="mb-3">
                         <label class="form-label">Nama Lengkap</label>
                         <?php if (session('validation') && session('validation')->hasError('nama')) : ?>
@@ -35,6 +35,11 @@
                             <?php } ?>
                         </select>
                     </div> 
+
+                    <div class="mb-3">
+                        <label class="form-label">Foto</label><br>
+                        <input class="form-control" type="file" name="foto">
+                    </div>
                     <input class="btn btn-primary" type="submit">
                 </form>
             </div>
