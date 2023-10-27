@@ -8,6 +8,19 @@
         <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="wrp w-100 d-flex justify-content-center align-items-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/user')?>">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/kelas')?>">Kelas</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <?= $this->renderSection('content') ?>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

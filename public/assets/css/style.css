@@ -19,10 +19,28 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 800px;
 }
 
 .profile .box {
   text-align: center;
   margin: 10px 0px;
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.form {
+  width: 500px;
+  padding: 40px;
+  border: 1pt solid #121212;
+  border-radius: 10px;
+}
+
+.title {
+  margin-bottom: 0px;
 }
