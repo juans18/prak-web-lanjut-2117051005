@@ -23,9 +23,15 @@
             <td><?= $user['npm'] ?></td>
             <td><?= $user['nama_kelas'] ?></td>
             <td>
-                <a class="btn btn-primary" href="<?= base_url('user/' . $user['id'])?>">Detail</a>
-                <a class="btn btn-warning" href="">Edit</a>
-                <a class="btn btn-danger" href="">Hapus</a>
+                <div class="wrp d-flex justify-content-start align-items-center">
+                    <a class="btn btn-primary me-2" href="<?= base_url('user/' . $user['id'])?>">Detail</a>
+                    <a class="btn btn-warning me-2" href="<?= base_url('user/' . $user['id'] . '/edit') ?>">Edit</a>
+                    <form action="<?= base_url('user/' . $user['id']) ?>" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <?= csrf_field() ?>
+                        <button class="btn btn-danger">Hapus</button>
+                    </form>    
+                </div>
             </td>
             </tr>
         <?php }
