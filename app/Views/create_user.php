@@ -14,17 +14,34 @@
                 <form action="<?= base_url('/user/store');?>" method="POST">
                     <div class="mb-3">
                         <label class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" name="nama">
+                        <?php if (session('validation') && session('validation')->hasError('nama')) : ?>
+                            <div class="invalid-feedback">
+                                <?= session('validation')->getError('nama'); ?>
+                            </div>
+                        <?php endif; ?>
+                        <input type="text" class="form-control <?= session('validation') && session('validation')->hasError('nama') ? 'is-invalid' : '' ?>"  placeholder="Nama" name="nama">
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">NPM</label>
-                        <input type="text" class="form-control" name="npm">
+                        <?php if (session('validation') && session('validation')->hasError('npm')) : ?>
+                            <div class="invalid-feedback">
+                                <?= session('validation')->getError('npm'); ?>
+                            </div>
+                        <?php endif; ?>
+                        <input type="text" class="form-control <?= session('validation') ? 'is-invalid' : '' ?>" placeholder="NPM" name="npm">
                     </div> 
                     
                     <div class="mb-3">
                         <label class="form-label">Kelas</label>
-                        <input type="text" class="form-control" name="kelas">
+                        <select class="form-select mt-2" aria-label="Default select example" name="kelas">
+                            <option value="" selected disabled>Pilih Kelas</option>
+                                <?php
+                                foreach ($kelas as $item) {
+                                ?>
+                                    <option value="<?= $item['id'] ?>"><?= $item['nama_kelas'] ?></option>
+                            <?php } ?>
+                        </select>
                     </div> 
                     <input class="btn btn-primary" type="submit">
                 </form>
